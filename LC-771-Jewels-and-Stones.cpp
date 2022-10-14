@@ -2,16 +2,13 @@ class Solution {
 public:
     int numJewelsInStones(string jewels, string stones) {
         int arr[52]={0}, count=0;
-        int sSize=stones.size();
-        int jSize=jewels.size();
+        int sSize=stones.size(), jSize=jewels.size();
         for(int i=0; i<jSize; i++)
         {
-            // cout<< jewels[i]-<< " ";
             if(jewels[i]>='A' && jewels[i]<='Z')
                 arr[jewels[i]-65]++;
             else
-                // cout<< jewels[i]-70<<" "<< jewels[i];
-                arr[jewels[i]-70]++;
+                arr[jewels[i]-71]++;
         }
         for(int i=0; i<sSize; i++)
         {
@@ -22,7 +19,7 @@ public:
             }
             else
             {
-                if(arr[stones[i]-70]!=0)
+                if(arr[stones[i]-71]!=0)
                     count++;
             }
         }
